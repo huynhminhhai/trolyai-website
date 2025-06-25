@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup AI</title>
+    <link rel="icon" type="image/png" href="./assets/images/favico.webp">
+
+    <!-- library -->
+    <link rel="stylesheet" href="./assets/library/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/library/slick/slick/slick.css">
+    <link rel="stylesheet" href="./assets/library/slick/slick/slick-theme.css">
+    <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/sidebar-secondary.css">
+</head>
+
+<body>
+    <div class="loader">
+        <img src="./assets/images/loading.gif" alt="Loading..." />
+        <div class="loader-text">Đang xử lý, vui lòng chờ...</div>
+    </div>
+    <nav id="sidebar-secondary">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                    role="tab" aria-controls="home" aria-selected="true">Giáo án</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+                    role="tab" aria-controls="profile" aria-selected="false">Đề thi</button>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="form-section">
+                    <div class="container">
+                        <div class="form-grid">
+                            <div class="row">
+                                <!-- Chủ đề bài học -->
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="chuDe">Chủ đề bài học</label>
+                                        <textarea id="chuDe" name="chuDe"
+                                            placeholder="Ví dụ: Hệ phương trình bậc nhất hai ẩn cho môn Toán lớp 9"
+                                            rows="5"></textarea>
+                                        <div class="note">Hãy mô tả giáo án mà bạn muốn tạo.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Thời lượng -->
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label for="thoiLuong">Thời lượng</label>
+                                        <select name="thoiLuong" id="thoiLuong">
+                                            <option value="1">30 phút</option>
+                                            <option value="2">45 phút</option>
+                                            <option value="3">60 phút</option>
+                                            <option value="3">90 phút</option>
+                                            <option value="3">120 phút</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label for="thoiLuong">Mục tiêu</label>
+                                        <select name="thoiLuong" id="thoiLuong">
+                                            <option value="1">Hiểu khái niệm</option>
+                                            <option value="2">Rèn luyện kỹ năng giải bài tập</option>
+                                            <option value="3">Phát triển tư duy phản biện</option>
+                                            <option value="3">Thực hành kỹ năng thực tế</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Nút mở rộng -->
+                                <div class="col-12">
+                                    <div class="toggle-options">
+                                        <button id="toggleOptions" class="btn-toggle-options">
+                                            + Thêm tùy chọn
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Tùy chọn nâng cao (ẩn/hiện) -->
+                                <div class="col-12" id="extraOptions" style="display: none; margin-top: 15px;">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="loaiCauHoi">Loại câu hỏi/Bài tập:</label>
+                                                <select id="loaiCauHoi" name="loaiCauHoi">
+                                                    <option value="multiple_choice">Trắc nghiệm</option>
+                                                    <option value="essay">Tự luận</option>
+                                                    <option value="fill_blank">Điền vào chỗ trống</option>
+                                                    <option value="matching">Ghép đôi (Matching)</option>
+                                                    <option value="practical">Thực hành</option>
+                                                    <option value="discussion">Câu hỏi thảo luận</option>
+                                                    <option value="group_project">Dự án nhóm</option>
+                                                    <option value="case_study">Bài tập tình huống</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <!-- Loại bài giảng -->
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="mucDoKho">Mức độ khó:</label>
+                                                <select id="mucDoKho" name="mucDoKho">
+                                                    <option value="basic">Cơ bản</option>
+                                                    <option value="intermediate">Trung bình</option>
+                                                    <option value="advanced">Nâng cao</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="soLuongCauHoi">Số lượng câu hỏi:</label>
+                                                <select id="soLuongCauHoi" name="soLuongCauHoi">
+                                                    <option value="auto">Tự động</option>
+                                                    <option value="5">5</option>
+                                                    <option value="10">10</option>
+                                                    <option value="20">20</option>
+                                                    <option value="30">30</option>
+                                                    <option value="40">40</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <button class="btn-create btn-base createBtn">Tạo giáo án
+                                            <div class="amount">
+                                                (2 lượt)
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="bottom">
+                    <button class="btn-create btn-base createBtn">Tạo giáo án
+                        <div class="amount">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M229.5,113,166.06,89.94,143,26.5a16,16,0,0,0-30,0L89.94,89.94,26.5,113a16,16,0,0,0,0,30l63.44,23.07L113,229.5a16,16,0,0,0,30,0l23.07-63.44L229.5,143a16,16,0,0,0,0-30ZM157.08,152.3a8,8,0,0,0-4.78,4.78L128,223.9l-24.3-66.82a8,8,0,0,0-4.78-4.78L32.1,128l66.82-24.3a8,8,0,0,0,4.78-4.78L128,32.1l24.3,66.82a8,8,0,0,0,4.78,4.78L223.9,128Z">
+                                </path>
+                            </svg>
+                            2
+                        </div>
+                    </button>
+                </div> -->
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="form-section">
+                    <div class="container">
+                        <!-- <h2 class="form-title title-page">Nhập môn học bạn muốn tạo giáo án</h2>
+                        <div class="desc-page">
+                            Chúng tôi sẽ tạo một giáo án dành riêng cho bạn
+                        </div> -->
+                        <div class="form-grid">
+                            <div class="row">
+                                <!-- Chủ đề bài học -->
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="chuDe">Chủ đề bài thi</label>
+                                        <textarea id="chuDe" name="chuDe"
+                                            placeholder="Ví dụ: Hệ phương trình bậc nhất hai ẩn cho môn Toán lớp 9"
+                                            rows="5"></textarea>
+                                        <div class="note">Hãy mô tả đề thi mà bạn muốn tạo.</div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <button class="btn-create btn-base createBtn">Tạo đề thi
+                                            <div class="amount">
+                                                (2 lượt)
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="bottom">
+                    <button class="btn-create btn-base createBtn">Tạo đề thi
+                        <div class="amount">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M229.5,113,166.06,89.94,143,26.5a16,16,0,0,0-30,0L89.94,89.94,26.5,113a16,16,0,0,0,0,30l63.44,23.07L113,229.5a16,16,0,0,0,30,0l23.07-63.44L229.5,143a16,16,0,0,0,0-30ZM157.08,152.3a8,8,0,0,0-4.78,4.78L128,223.9l-24.3-66.82a8,8,0,0,0-4.78-4.78L32.1,128l66.82-24.3a8,8,0,0,0,4.78-4.78L128,32.1l24.3,66.82a8,8,0,0,0,4.78,4.78L223.9,128Z">
+                                </path>
+                            </svg>
+                            2
+                        </div>
+                    </button>
+                </div> -->
+            </div>
+        </div>
+    </nav>
+    <main class="ai-gradient-bg">
+        <div class="d-flex justify-content-between">
+            <a href="./index.html" class="back-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                    <path
+                        d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z">
+                    </path>
+                </svg>
+                Trang chủ
+            </a>
+            <a href="./my-library.html" class="back-btn">
+                Thư viện của tôi
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                    <path
+                        d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+        <div class="blur"></div>
+        <div class="popup-share">
+            <div class="close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                    <path
+                        d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z">
+                    </path>
+                </svg>
+            </div>
+            <div class="popup-container">
+                <div class="title">Bạn muốn chia sẻ bằng cách nào?</div>
+                <div class="wrap">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="public">
+                                <div class="public-input">
+                                    <div class="right">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                fill="#000000" viewBox="0 0 256 256">
+                                                <path
+                                                    d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,16a87.5,87.5,0,0,1,48,14.28V74L153.83,99.74,122.36,104l-.31-.22L102.38,90.92A16,16,0,0,0,79.87,95.1L58.93,126.4a16,16,0,0,0-2.7,8.81L56,171.44l-3.27,2.15A88,88,0,0,1,128,40ZM62.29,186.47l2.52-1.65A16,16,0,0,0,72,171.53l.21-36.23L93.17,104a3.62,3.62,0,0,0,.32.22l19.67,12.87a15.94,15.94,0,0,0,11.35,2.77L156,115.59a16,16,0,0,0,10-5.41l22.17-25.76A16,16,0,0,0,192,74V67.67A87.87,87.87,0,0,1,211.77,155l-16.14-14.76a16,16,0,0,0-16.93-3l-30.46,12.65a16.08,16.08,0,0,0-9.68,12.45l-2.39,16.19a16,16,0,0,0,11.77,17.81L169.4,202l2.36,2.37A87.88,87.88,0,0,1,62.29,186.47ZM185,195l-4.3-4.31a16,16,0,0,0-7.26-4.18L152,180.85l2.39-16.19L184.84,152,205,170.48A88.43,88.43,0,0,1,185,195Z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="content">
+                                            <div class="text">Công khai</div>
+                                            <div class="desc">Mọi người có thể coi và truy cập vào.</div>
+                                        </div>
+                                    </div>
+                                    <div class="left">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                            viewBox="0 0 256 256">
+                                            <path
+                                                d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="public-options">
+                                    <div class="public-input">
+                                        <div class="right">
+                                            <div class="icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                    fill="#000000" viewBox="0 0 256 256">
+                                                    <path
+                                                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,16a87.5,87.5,0,0,1,48,14.28V74L153.83,99.74,122.36,104l-.31-.22L102.38,90.92A16,16,0,0,0,79.87,95.1L58.93,126.4a16,16,0,0,0-2.7,8.81L56,171.44l-3.27,2.15A88,88,0,0,1,128,40ZM62.29,186.47l2.52-1.65A16,16,0,0,0,72,171.53l.21-36.23L93.17,104a3.62,3.62,0,0,0,.32.22l19.67,12.87a15.94,15.94,0,0,0,11.35,2.77L156,115.59a16,16,0,0,0,10-5.41l22.17-25.76A16,16,0,0,0,192,74V67.67A87.87,87.87,0,0,1,211.77,155l-16.14-14.76a16,16,0,0,0-16.93-3l-30.46,12.65a16.08,16.08,0,0,0-9.68,12.45l-2.39,16.19a16,16,0,0,0,11.77,17.81L169.4,202l2.36,2.37A87.88,87.88,0,0,1,62.29,186.47ZM185,195l-4.3-4.31a16,16,0,0,0-7.26-4.18L152,180.85l2.39-16.19L184.84,152,205,170.48A88.43,88.43,0,0,1,185,195Z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div class="content">
+                                                <div class="text">Công khai</div>
+                                                <div class="desc">Mọi người có thể coi và truy cập vào.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="public-input">
+                                        <div class="right">
+                                            <div class="icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                    fill="#000000" viewBox="0 0 256 256">
+                                                    <path
+                                                        d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div class="content">
+                                                <div class="text">Không công khai</div>
+                                                <div class="desc">Mọi người không thể coi và truy cập vào.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="coppy">
+                                <div class="form-group">
+                                    <input name="coppy-link" id="coppy-link"
+                                        value="https://www.pinterest.com/search/pins/?q=button%20limit%20amount&rs=typed" />
+                                </div>
+                                <button class="btn-more btn-base" type="button">
+                                    Sao chép
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="result-section">
+            <div class="container">
+                <div class="loadingContent" style="display: none;">
+                    <div class="spinner"></div>
+                </div>
+                <div class="responseMessage">
+                    <div class="desc">
+                        Nhập thông tin cơ bản của giáo án ở khung bên trái. Sau đó, thêm các mục cần thiết để hoàn thiện giáo án.
+                    </div>
+                    <div class="media">
+                        <img src="./assets/images/technology.png" alt="media">
+                    </div>
+                </div>
+                <div class="responseContent" style="display: none;">
+                    <div class="heading-section result-heading">
+                        <h2 class="title-page">Giáo án Toán lớp 5: Phân số và Số thập phân</h2>
+                        <div class="result-btns">
+                            <button class="btn-share btn-base" type="button" title="Share">
+                                Chia sẻ
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M237.66,106.35l-80-80A8,8,0,0,0,144,32V72.35c-25.94,2.22-54.59,14.92-78.16,34.91-28.38,24.08-46.05,55.11-49.76,87.37a12,12,0,0,0,20.68,9.58h0c11-11.71,50.14-48.74,107.24-52V192a8,8,0,0,0,13.66,5.65l80-80A8,8,0,0,0,237.66,106.35ZM160,172.69V144a8,8,0,0,0-8-8c-28.08,0-55.43,7.33-81.29,21.8a196.17,196.17,0,0,0-36.57,26.52c5.8-23.84,20.42-46.51,42.05-64.86C99.41,99.77,127.75,88,152,88a8,8,0,0,0,8-8V51.32L220.69,112Z">
+                                    </path>
+                                </svg>
+                            </button>
+                            <button class="btn-more btn-base" type="button" title="More" id="btnMore">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M128,96a32,32,0,1,0,32,32A32,32,0,0,0,128,96Zm0,48a16,16,0,1,1,16-16A16,16,0,0,1,128,144Zm0-64A32,32,0,1,0,96,48,32,32,0,0,0,128,80Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,128,32Zm0,144a32,32,0,1,0,32,32A32,32,0,0,0,128,176Zm0,48a16,16,0,1,1,16-16A16,16,0,0,1,128,224Z">
+                                    </path>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu" id="dropdownMenu">
+
+                                <div class="menu-item enabled-edit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z">
+                                        </path>
+                                    </svg>
+                                    <span>Chỉnh sửa</span>
+                                </div>
+
+                                <div class="menu-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z">
+                                        </path>
+                                    </svg>
+                                    <span>Tải xuống</span>
+                                </div>
+
+                                <div class="menu-item danger">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z">
+                                        </path>
+                                    </svg>
+                                    <span>Xóa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="editor-container">
+                            <div class="editor-wrap">
+                                <div class="editor-content"></div>
+                            </div>
+                            <button class="btn-more btn-base">Lưu thay đổi</button>
+                        </div>
+                        <div class="content-text">
+                            <h2>I. Mục tiêu</h2><ul><li>Học sinh nắm vững khái niệm <strong>phân số</strong> và <strong>số thập phân</strong>.</li><li>Hiểu và thực hiện được <strong>chuyển đổi</strong> giữa phân số và số thập phân.</li><li>Rèn kỹ năng đọc, viết, so sánh và thực hiện các phép tính với phân số và số thập phân.</li><li>Phát triển tư duy logic và kỹ năng giải quyết vấn đề thực tế liên quan đến phân số và số thập phân.</li></ul><h2>II. Chuẩn bị</h2><ul><li><strong>Giáo viên:</strong> Bảng phụ, phiếu bài tập, máy chiếu (nếu có), SGK Toán lớp 5, hình ảnh minh họa phân số và số thập phân (hình bánh pizza, thước kẻ chia vạch).</li><li><strong>Học sinh:</strong> Vở ghi, SGK Toán lớp 5, bảng con, bút chì, thước kẻ.</li></ul><h2>III. Các hoạt động dạy học (45 phút)</h2><h3>1. Khởi động (5 phút)</h3><ul><li>Hoạt động: Giáo viên (GV) chiếu hình ảnh một chiếc bánh pizza được chia làm 4 phần, hỏi: “Nếu ăn 2 phần, em đã ăn bao nhiêu phần của cái bánh?” (Dẫn dắt đến khái niệm 2/4).</li><li>Mục tiêu: Kích thích hứng thú và ôn lại khái niệm phân số.</li></ul><h3>2. Bài mới (30 phút)</h3><h4>a. Giới thiệu phân số (10 phút)</h4><ul><li>GV giải thích: Phân số có dạng a/b (b ≠ 0), trong đó a là tử số, b là mẫu số.</li><li>Ví dụ: 1/2 (một nửa), 3/4 (ba phần tư). GV dùng bảng phụ vẽ hình minh họa (hình tròn chia phần).</li><li>Hoạt động: HS thảo luận nhóm đôi, tìm ví dụ thực tế về phân số (ví dụ: chia quả cam, chia thời gian).</li></ul>
+                            <h4>b. Giới thiệu số thập phân (10 phút)</h4>
+                            <ul>
+                                <li>GV giới thiệu: Số thập phân có phần nguyên và phần thập phân, cách nhau bởi dấu phẩy (ví
+                                    dụ: 0,5; 0,75).</li>
+                                <li>GV dùng thước kẻ chia vạch để minh họa: 0,5 là 5/10, 0,75 là 75/100.</li>
+                                <li>Hoạt động: HS viết 3 số thập phân bất kỳ lên bảng con, GV kiểm tra.</li>
+                            </ul>
+                            <h4>c. Chuyển đổi giữa phân số và số thập phân (10 phút)</h4>
+                            <ul>
+                                <li>GV hướng dẫn:
+                                    <ul>
+                                        <li>Chuyển phân số thành số thập phân: Chia tử số cho mẫu số (ví dụ: 1/2 = 1 ÷ 2 =
+                                            0,5).</li>
+                                        <li>Chuyển số thập phân thành phân số: Viết số thập phân dưới dạng phân số với mẫu
+                                            là 10, 100… rồi rút gọn (ví dụ: 0,75 = 75/100 = 3/4).</li>
+                                    </ul>
+                                </li>
+                                <li>Hoạt động: HS làm bài tập nhanh trên bảng con: Chuyển 3/5 thành số thập phân và 0,4
+                                    thành phân số.</li>
+                            </ul>
+                            <h3>3. Luyện tập (8 phút)</h3>
+                            <ul>
+                                <li><strong>Bài 1:</strong> Viết các phân số sau dưới dạng số thập phân:
+                                    <ul>
+                                        <li>1/2 = 0,5</li>
+                                        <li>3/4 = 0,75</li>
+                                        <li>4/5 = 0,8</li>
+                                        <li>7/10 = 0,7</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Bài 2:</strong> Viết các số thập phân sau dưới dạng phân số:
+                                    <ul>
+                                        <li>0,25 = 1/4</li>
+                                        <li>0,5 = 1/2</li>
+                                        <li>0,75 = 3/4</li>
+                                        <li>1,2 = 6/5</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Bài 3:</strong> So sánh các cặp số sau:
+                                    <ul>
+                                        <li>0,75 và 3/4 (bằng nhau)</li>
+                                        <li>0,6 và 2/3 (0,6 < 0,666...)</li>
+                                        <li>4/5 và 0,8 (bằng nhau)</li>
+                                    </ul>
+                                </li>
+                                <li>Hoạt động: HS làm bài trên phiếu học tập, GV thu 5-7 phiếu để chấm và nhận xét.</li>
+                            </ul>
+                            <h3>4. Củng cố – Dặn dò (2 phút)</h3>
+                            <ul>
+                                <li>GV hỏi nhanh: “Làm thế nào để chuyển 1/4 thành số thập phân?” và “0,8 là phân số nào?”.
+                                </li>
+                                <li>Dặn dò: Ôn lại cách chuyển đổi giữa phân số và số thập phân, chuẩn bị bài <em>So sánh
+                                        hai số thập phân</em>.</li>
+                            </ul>
+                            <h2>IV. Bài tập về nhà</h2>
+                            <ul>
+                                <li><strong>Bài 1:</strong> Chuyển các phân số sau thành số thập phân:
+                                    <ul>
+                                        <li>1/4 = 0,25</li>
+                                        <li>2/5 = 0,4</li>
+                                        <li>3/10 = 0,3</li>
+                                        <li>7/8 = 0,875</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Bài 2:</strong> Chuyển các số thập phân sau thành phân số:
+                                    <ul>
+                                        <li>0,2 = 1/5</li>
+                                        <li>0,6 = 3/5</li>
+                                        <li>1,5 = 3/2</li>
+                                        <li>2,75 = 11/4</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Bài 3:</strong> Một bể chứa 50 lít nước. Người ta lấy ra 3/10 bể. Hỏi còn lại
+                                    bao nhiêu lít nước? Viết kết quả dưới dạng số thập phân.<br>
+                                    → Đáp án: Lấy ra: 50 × 3/10 = 15 lít; Còn lại: 50 − 15 = 35,0 lít.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+<!-- library -->
+<script src="./assets/library/jquery/jquery.min.js"></script>
+<script src="./assets/library/slick/slick/slick.min.js"></script>
+<script src="./assets/library/validate/jquery.validate.js"></script>
+<script src="./assets/library/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
+
+<!-- js -->
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/home.js"></script>
+
+</html>

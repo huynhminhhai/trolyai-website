@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup AI</title>
+    <link rel="icon" type="image/png" href="./assets/images/favico.webp">
+
+    <!-- library -->
+    <link rel="stylesheet" href="./assets/library/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/library/slick/slick/slick.css">
+    <link rel="stylesheet" href="./assets/library/slick/slick/slick-theme.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+</head>
+
+<body>
+    <div class="loader">
+        <img src="./assets/images/loading.gif"
+            alt="Loading..." />
+        <div class="loader-text">Đang xử lý, vui lòng chờ...</div>
+    </div>
+    <header class="header">
+        <a class="logo" href="./index.html">
+            <img src="./assets/images/logo.png" alt="logo">
+        </a>
+        <a class="skip btn" href="./index.html">
+            Bỏ qua
+        </a>
+    </header>
+    <main class="ai-gradient-bg">
+        <section class="login-section">
+            <div class="container">
+                <div class="content">
+                    <div class="center-box">
+                        <div class="message-box">
+                            <div class="heading">Vui lòng nhập số điện thoại của bạn bên dưới.</div>
+
+                            <div class="login-form">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input id="hoTen" name="hoTen" type="text" class="form-control" placeholder="Nhập họ tên">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input id="dienThoai" name="dienThoai" type="text" class="form-control" placeholder="Nhập số điện thoại">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="recaptcha-box">
+                                            <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="note">
+                                            Bằng cách tiếp tục, bạn đồng ý nhận tin nhắn từ chúng tôi và chấp nhận <a href="./index.html" target="_blank">Điều khoản sử dụng</a> & <a href="./index.html" target="_blank">Chính sách bảo mật</a>.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <a href="./login-phone-otp.html" class="btn-create btn-base">Tiếp tục</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+<!-- library -->
+<script src="./assets/library/jquery/jquery.min.js"></script>
+<script src="./assets/library/slick/slick/slick.min.js"></script>
+<script src="./assets/library/validate/jquery.validate.js"></script>
+<script src="./assets/library/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<!-- js -->
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/home.js"></script>
+
+</html>

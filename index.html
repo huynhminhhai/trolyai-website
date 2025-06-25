@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup AI</title>
+    <link rel="icon" type="image/png" href="./assets/images/favico.webp">
+
+    <!-- library -->
+    <link rel="stylesheet" href="./assets/library/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/library/slick/slick/slick.css">
+    <link rel="stylesheet" href="./assets/library/slick/slick/slick-theme.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/sidebar.css">
+</head>
+
+<body>
+    <div class="loader">
+        <img src="./assets/images/loading.gif" alt="Loading..." />
+        <div class="loader-text">Đang xử lý, vui lòng chờ...</div>
+    </div>
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <a class="logo" href="./index.html">
+                    <img src="./assets/images/logo.png" alt="logo">
+                </a>
+                <button id="toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H112a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM112,72H216a8,8,0,0,0,0-16H112a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM72,144a8,8,0,0,0,5.66-13.66L43.31,96,77.66,61.66A8,8,0,0,0,66.34,50.34l-40,40a8,8,0,0,0,0,11.32l40,40A8,8,0,0,0,72,144Z"></path></svg>
+                </button>
+            </li>
+            <li>
+                <div class="profile-header" id="toggle-flyout-button">
+                    <div class="profile-info">
+                        <img class="profile-image" src="./assets/images/avatar.jpg" alt="Profile Image" width="40"
+                            height="40" />
+                        <div class="profile-text">
+                            <span class="profile-name">hai</span>
+                            <span class="profile-plan">Basic</span>
+                        </div>
+                    </div>
+                    <button class="profile-options-btn">
+                        <svg class="options-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
+                            fill="currentColor">
+                            <path
+                                d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM128,72a12,12,0,1,0-12-12A12,12,0,0,0,128,72Zm0,112a12,12,0,1,0,12,12A12,12,0,0,0,128,184Z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="flyout-menu-user-menu" class="flyout-menu">
+                    <div class="menu-wrapper" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                        <div class="menu-content">
+
+                            <a href="./account.html" class="menu-item">
+                                <svg class="w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 256 256" fill="currentColor">
+                                    <path
+                                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z">
+                                    </path>
+                                </svg>
+                                <span>Tài khoản</span>
+                            </a>
+
+                            <a href="./upgrade.html" class="menu-item">
+                                <svg class="w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 256 256" fill="currentColor">
+                                    <path
+                                        d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z">
+                                    </path>
+                                </svg>
+                                <span>Nâng cấp Premium</span>
+                            </a>
+                            <hr>
+                            <a href="./login.html" class="menu-item">
+                                <svg class="w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 256 256" fill="currentColor">
+                                    <path
+                                        d="M120,216a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H56V208h56A8,8,0,0,1,120,216Zm109.66-93.66-40-40a8,8,0,0,0-11.32,11.32L204.69,120H112a8,8,0,0,0,0,16h92.69l-26.35,26.34a8,8,0,0,0,11.32,11.32l40-40A8,8,0,0,0,229.66,122.34Z">
+                                    </path>
+                                </svg>
+                                <span>Đăng xuất</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="active">
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM172.42,72.84l-64,32a8.05,8.05,0,0,0-3.58,3.58l-32,64A8,8,0,0,0,80,184a8.1,8.1,0,0,0,3.58-.84l64-32a8.05,8.05,0,0,0,3.58-3.58l32-64a8,8,0,0,0-10.74-10.74ZM138,138,97.89,158.11,118,118l40.15-20.07Z">
+                        </path>
+                    </svg>
+                    <span>Khám phá</span>
+                </a>
+            </li>
+            <li>
+                <a href="./my-library.html">
+                    <svg class="w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
+                        fill="currentColor">
+                        <path
+                            d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z">
+                        </path>
+                    </svg>
+                    <span>Thư viện của tôi</span>
+                </a>
+            </li>
+            <!-- <li>
+                <button onclick=toggleSubMenu(this) class="dropdown-btn">
+                    <svg class="w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
+                        fill="currentColor">
+                        <path
+                            d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z">
+                        </path>
+                    </svg>
+                    <span>Create</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z" />
+                    </svg>
+                </button>
+                <ul class="sub-menu">
+                    <div>
+                        <li><a href="./index.html">Folder</a></li>
+                        <li><a href="./index.html">Document</a></li>
+                        <li><a href="./index.html">Project</a></li>
+                    </div>
+                </ul>
+            </li> -->
+        </ul>
+        <ul class="sidebar-footer">
+            <li>
+                <a href="#" title="Chính sách bảo mật">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path></svg>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Chính sách bảo mật">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z"></path></svg>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Chính sách bảo mật">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm109.94-52.79a8,8,0,0,0-3.89-5.4l-29.83-17-.12-33.62a8,8,0,0,0-2.83-6.08,111.91,111.91,0,0,0-36.72-20.67,8,8,0,0,0-6.46.59L128,41.85,97.88,25a8,8,0,0,0-6.47-.6A112.1,112.1,0,0,0,54.73,45.15a8,8,0,0,0-2.83,6.07l-.15,33.65-29.83,17a8,8,0,0,0-3.89,5.4,106.47,106.47,0,0,0,0,41.56,8,8,0,0,0,3.89,5.4l29.83,17,.12,33.62a8,8,0,0,0,2.83,6.08,111.91,111.91,0,0,0,36.72,20.67,8,8,0,0,0,6.46-.59L128,214.15,158.12,231a7.91,7.91,0,0,0,3.9,1,8.09,8.09,0,0,0,2.57-.42,112.1,112.1,0,0,0,36.68-20.73,8,8,0,0,0,2.83-6.07l.15-33.65,29.83-17a8,8,0,0,0,3.89-5.4A106.47,106.47,0,0,0,237.94,107.21Zm-15,34.91-28.57,16.25a8,8,0,0,0-3,3c-.58,1-1.19,2.06-1.81,3.06a7.94,7.94,0,0,0-1.22,4.21l-.15,32.25a95.89,95.89,0,0,1-25.37,14.3L134,199.13a8,8,0,0,0-3.91-1h-.19c-1.21,0-2.43,0-3.64,0a8.08,8.08,0,0,0-4.1,1l-28.84,16.1A96,96,0,0,1,67.88,201l-.11-32.2a8,8,0,0,0-1.22-4.22c-.62-1-1.23-2-1.8-3.06a8.09,8.09,0,0,0-3-3.06l-28.6-16.29a90.49,90.49,0,0,1,0-28.26L61.67,97.63a8,8,0,0,0,3-3c.58-1,1.19-2.06,1.81-3.06a7.94,7.94,0,0,0,1.22-4.21l.15-32.25a95.89,95.89,0,0,1,25.37-14.3L122,56.87a8,8,0,0,0,4.1,1c1.21,0,2.43,0,3.64,0a8.08,8.08,0,0,0,4.1-1l28.84-16.1A96,96,0,0,1,188.12,55l.11,32.2a8,8,0,0,0,1.22,4.22c.62,1,1.23,2,1.8,3.06a8.09,8.09,0,0,0,3,3.06l28.6,16.29A90.49,90.49,0,0,1,222.9,142.12Z"></path></svg>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Chính sách bảo mật">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M120,40V32a8,8,0,0,1,16,0v8a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-8-8A8,8,0,0,0,50.34,61.66Zm0,116.68-8,8a8,8,0,0,0,11.32,11.32l8-8a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l8-8a8,8,0,0,0-11.32-11.32l-8,8A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l8,8a8,8,0,0,0,11.32-11.32ZM40,120H32a8,8,0,0,0,0,16h8a8,8,0,0,0,0-16Zm88,88a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-8A8,8,0,0,0,128,208Zm96-88h-8a8,8,0,0,0,0,16h8a8,8,0,0,0,0-16Z"></path></svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main class="ai-gradient-bg">
+        <section class="welcome-section">
+            <div class="container">
+                <div class="user-info">
+                    <div class="avatar-wrapper">
+                        <img class="avatar" src="./assets/images/loading.gif" alt="hai's avatar">
+                        <!-- <div class="avatar-border bg-1"></div>
+                        <div class="avatar-border bg-2"></div> -->
+                    </div>
+                    <div class="text-info">
+                        <h1 class="welcome-title">Chào Mừng Hai!</h1>
+
+                        <div class="intro-container">
+                            <div class="intro-text">
+                                Chào bạn, Hãy tạo câu hỏi trắc nghiệm từ ghi chú bài giảng của bạn hoặc khám phá các nội dung có sẵn 👍
+                            </div>
+                            <div class="loading-placeholder hidden">
+                                <div class="loading-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="quick-start-section">
+            <div class="container">
+                <div class="heading-section">
+                    <h2 class="quick-start-title title-section">Công cụ nổi bật</h2>
+                </div>
+
+                <div class="quick-start-grid">
+
+                    <a href="./document.html" class="quick-start-card card">
+                        <div class="card-next">
+                            <div class="card-next-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/128/14682/14682609.png" alt="Văn bản">
+                        </div>
+                        <h3 class="card-title">Tóm tắt & Soạn văn bản</h3>
+                        <div class="card-description">
+                            Tóm tắt nội dung, đọc hiểu, viết lại văn bản, chuyển văn bản thành giọng nói tự nhiên.
+                        </div>
+                    </a>
+
+                    <a href="./topic.html" class="quick-start-card card">
+                        <div class="card-next">
+                            <div class="card-next-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/128/14670/14670407.png"
+                                alt="Soạn nội dung giáo dục">
+                        </div>
+                        <h3 class="card-title">Soạn Giáo án & Đề thi</h3>
+                        <div class="card-description">
+                            Hỗ trợ tóm tắt, đọc hiểu văn bản; soạn giáo án, đề thi; viết và chỉnh sửa nội dung giảng
+                            dạy.
+                        </div>
+                    </a>
+
+                    <a href="./topic.html" class="quick-start-card card">
+                        <div class="card-next">
+                            <div class="card-next-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/128/10256/10256127.png"
+                                alt="Làm báo cáo và trình bày">
+                        </div>
+                        <h3 class="card-title">Làm báo cáo</h3>
+                        <div class="card-description">
+                            Hỗ trợ tạo báo cáo, bảng thống kê và trình bày slide chuyên nghiệp từ nội dung văn bản hoặc
+                            bảng dữ liệu.
+                        </div>
+                    </a>
+
+                    <a href="./topic.html" class="quick-start-card card">
+                        <div class="card-next">
+                            <div class="card-next-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/128/10272/10272566.png"
+                                alt="Làm video và hoạt hình">
+                        </div>
+                        <h3 class="card-title">Làm Video & Phim hoạt hình</h3>
+                        <div class="card-description">
+                            Tạo video, phim hoạt hình từ nội dung có sẵn; chèn hình ảnh, giọng nói hoặc nhân vật ảo
+                            trình bày.
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+        <section class="showcase-section">
+            <div class="container">
+                <div class="heading-section">
+                    <h2 class="showcase-title title-section">Giáo án mẫu</h2>
+                    <a href="./index.html" class="see-more">
+                        Xem thêm
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                            <rect width="256" height="256" fill="none" />
+                            <polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="showcase-grid">
+                    <a class="showcase-card card" href="./topic-result.html">
+                        <div class="icon">
+                            <img src="./assets/images/open-book.png" alt="Toán lớp 5: Phân số và Số thập phân">
+                        </div>
+                        <div class="content-wrap">
+                            <div class="showcase-header">
+                                <div class="showcase-title">Toán lớp 5: Phân số và Số thập phân</div>
+                            </div>
+                            <div class="desc">
+                                Làm quen với phân số, số thập phân và cách chuyển đổi giữa chúng. Học cách thực hiện các
+                                phép tính cộng, trừ, nhân, chia và áp dụng vào giải toán thực tế.
+                            </div>
+                            <div class="showcase-date">17/06/2025</div>
+                        </div>
+                    </a>
+
+                    <a class="showcase-card card" href="./topic-result.html">
+                        <div class="icon">
+                            <img src="./assets/images/open-book.png" alt="Toán lớp 5: Phân số và Số thập phân">
+                        </div>
+                        <div class="content-wrap">
+                            <div class="showcase-header">
+                                <div class="showcase-title">Tiếng Việt lớp 4: Luyện từ và câu</div>
+                            </div>
+                            <div class="desc">
+                                Tăng vốn từ vựng, hiểu rõ nghĩa của từ và cách đặt câu đúng ngữ pháp. Rèn kỹ năng viết đoạn
+                                văn, sử dụng từ ngữ linh hoạt và sinh động.
+                            </div>
+                            <div class="showcase-date">17/06/2025</div>
+                        </div>
+                    </a>
+
+                    <a class="showcase-card card" href="./topic-result.html">
+                        <div class="icon">
+                            <img src="./assets/images/open-book.png" alt="Toán lớp 5: Phân số và Số thập phân">
+                        </div>
+                        <div class="content-wrap">
+                            <div class="showcase-header">
+                                <div class="showcase-title">Tự nhiên & Xã hội lớp 3: Cơ thể người</div>
+                            </div>
+                            <div class="desc">
+                                Tìm hiểu các bộ phận chính của cơ thể như mắt, tay, chân, tim và phổi. Học cách giữ gìn vệ
+                                sinh cá nhân và chăm sóc sức khỏe hàng ngày.
+                            </div>
+                            <div class="showcase-date">17/06/2025</div>
+                        </div>
+                    </a>
+
+                    <a class="showcase-card card" href="./topic-result.html">
+                        <div class="icon">
+                            <img src="./assets/images/open-book.png" alt="Toán lớp 5: Phân số và Số thập phân">
+                        </div>
+                        <div class="content-wrap">
+                            <div class="showcase-header">
+                                <div class="showcase-title">Lịch sử & Địa lý lớp 5: Các dân tộc Việt Nam</div>
+                            </div>
+                            <div class="desc">
+                                Khám phá sự đa dạng văn hóa của 54 dân tộc anh em trên đất nước Việt Nam. Tìm hiểu về phong
+                                tục, tập quán, trang phục và các vùng miền tiêu biểu.
+                            </div>
+                            <div class="showcase-date">17/06/2025</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="showcase-section">
+            <div class="container">
+                <div class="heading-section">
+                    <h2 class="showcase-title title-section">Đề thi mẫu</h2>
+                    <a href="./index.html" class="see-more">
+                        Xem thêm
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                            <rect width="256" height="256" fill="none" />
+                            <polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="showcase-grid">
+                    <a class="showcase-card card" href="./topic-result.html">
+                        <div class="icon">
+                            <img src="./assets/images/exam.png" alt="Đề thi Toán lớp 5: Phân số và Số thập phân">
+                        </div>
+                        <div class="content-wrap">
+                            <div class="showcase-header">
+                                <div class="showcase-title">Đề thi Toán lớp 5: Phân số và Số thập phân</div>
+                            </div>
+                            <div class="desc">
+                                Đề kiểm tra kiến thức về phân số, số thập phân và các phép tính cơ bản. Phù hợp ôn luyện trước kiểm tra định kỳ.
+                            </div>
+                            <div class="showcase-date">17/06/2025</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="showcase-section">
+            <div class="container">
+                <div class="heading-section">
+                    <h2 class="showcase-title title-section">Video mẫu</h2>
+                    <a href="./index.html" class="see-more">
+                        Xem thêm
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                            <rect width="256" height="256" fill="none" />
+                            <polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="showcase-grid">
+                    <a class="media-card" href="./index.html">
+                        <div class="media-box">
+                            <div class="media-wrapper">
+                                <video src="https://files.monica-cdn.im/assets/video/video-page/122504.mp4"
+                                    poster="https://files.monica-cdn.im/assets/img/video-page/122504.jpg" muted loop
+                                    playsinline preload="none"></video>
+                            </div>
+                            <div class="tags">
+                                <span class="tag">Pike</span>
+                            </div>
+                            <div class="action-button">
+                                <span class="button-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M184,64H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H184a8,8,0,0,0,8-8V72A8,8,0,0,0,184,64Zm-8,144H48V80H176ZM224,40V184a8,8,0,0,1-16,0V48H72a8,8,0,0,1,0-16H216A8,8,0,0,1,224,40Z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="desc">Mặt biển lấp lánh và lăn tăn gợn sóng</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="media-card" href="./index.html">
+                        <div class="media-box">
+                            <div class="media-wrapper">
+                                <video src="https://files.monica-cdn.im/assets/video_page/video/Kling.mp4"
+                                    poster="https://files.monica-cdn.im/assets/video_page/image/Kling.jpg" muted loop
+                                    playsinline preload="none"></video>
+                            </div>
+                            <div class="tags">
+                                <span class="tag">hai</span>
+                            </div>
+                            <div class="action-button">
+                                <span class="button-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M184,64H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H184a8,8,0,0,0,8-8V72A8,8,0,0,0,184,64Zm-8,144H48V80H176ZM224,40V184a8,8,0,0,1-16,0V48H72a8,8,0,0,1,0-16H216A8,8,0,0,1,224,40Z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="desc">Các tòa nhà đầy màu sắc nằm dọc theo một con kênh ở Venice, những
+                                    chiếc gondola lướt nhẹ trên mặt nước và ánh nắng lấp lánh trên những gợn sóng lăn tăn.</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="media-card" href="./index.html">
+                        <div class="media-box">
+                            <div class="media-wrapper">
+                                <video src="https://files.monica-cdn.im/assets/video/video-page/122505.mp4"
+                                    poster="https://files.monica-cdn.im/assets/img/video-page/122505.jpg" muted loop
+                                    playsinline preload="none"></video>
+                            </div>
+                            <div class="tags">
+                                <span class="tag">hai</span>
+                            </div>
+                            <div class="action-button">
+                                <span class="button-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M184,64H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H184a8,8,0,0,0,8-8V72A8,8,0,0,0,184,64Zm-8,144H48V80H176ZM224,40V184a8,8,0,0,1-16,0V48H72a8,8,0,0,1,0-16H216A8,8,0,0,1,224,40Z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="desc">Chim bay trên trời</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="media-card" href="./index.html">
+                        <div class="media-box">
+                            <div class="media-wrapper">
+                                <video src="https://files.monica-cdn.im/assets/video_page/video/Kling7.mp4"
+                                    poster="https://files.monica-cdn.im/assets/video_page/image/Kling7.jpg" muted loop
+                                    playsinline preload="none"></video>
+                            </div>
+                            <div class="tags">
+                                <span class="tag">Hung</span>
+                            </div>
+                            <div class="action-button">
+                                <span class="button-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M184,64H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H184a8,8,0,0,0,8-8V72A8,8,0,0,0,184,64Zm-8,144H48V80H176ZM224,40V184a8,8,0,0,1-16,0V48H72a8,8,0,0,1,0-16H216A8,8,0,0,1,224,40Z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="desc">Chuyến tàu từ từ tiến về phía trước.</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="media-card" href="./index.html">
+                        <div class="media-box">
+                            <div class="media-wrapper">
+                                <video src="https://files.monica-cdn.im/assets/video_page/video/Pixversevenom1.mp4"
+                                    poster="https://files.monica-cdn.im/assets/video_page/image/Pixversevenom1.jpg"
+                                    muted loop playsinline preload="none"></video>
+                            </div>
+                            <div class="tags">
+                                <span class="tag">Hung</span>
+                            </div>
+                            <div class="action-button">
+                                <span class="button-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M184,64H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H184a8,8,0,0,0,8-8V72A8,8,0,0,0,184,64Zm-8,144H48V80H176ZM224,40V184a8,8,0,0,1-16,0V48H72a8,8,0,0,1,0-16H216A8,8,0,0,1,224,40Z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="desc">Hóa thân thành Venom.</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="media-card" href="./index.html">
+                        <div class="media-box">
+                            <div class="media-wrapper">
+                                <video src="https://files.monica-cdn.im/assets/video_page/video/Pixverseshot1.mp4"
+                                    poster="https://files.monica-cdn.im/assets/video_page/image/Pixverseshot1.jpg" muted
+                                    loop playsinline preload="none"></video>
+                            </div>
+                            <div class="tags">
+                                <span class="tag">Hung</span>
+                            </div>
+                            <div class="action-button">
+                                <span class="button-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                                        viewBox="0 0 256 256">
+                                        <path
+                                            d="M184,64H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H184a8,8,0,0,0,8-8V72A8,8,0,0,0,184,64Zm-8,144H48V80H176ZM224,40V184a8,8,0,0,1-16,0V48H72a8,8,0,0,1,0-16H216A8,8,0,0,1,224,40Z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="desc">[CHỦ THỂ] trong bức ảnh nở nụ cười nham hiểm và bắt đầu nổ súng.</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+<!-- library -->
+<script src="./assets/library/jquery/jquery.min.js"></script>
+<script src="./assets/library/slick/slick/slick.min.js"></script>
+<script src="./assets/library/validate/jquery.validate.js"></script>
+<script src="./assets/library/bootstrap/bootstrap.bundle.min.js"></script>
+
+<!-- js -->
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/home.js"></script>
+<script src="./assets/js/sidebar.js"></script>
+
+</html>
