@@ -68,8 +68,8 @@
     --priamry-border-color: #164d8c;
     --priamry-hover-color: #1f7ecc;
     --secondary-color: #9a9a9a;
-    --text-color: #334155;
-    --text-gray-color: #475569;
+    --text-color: #222222;
+    --text-gray-color: #808080;
     --bg-color: #f1f5f9;
     --border-color: #e0e0d9;
     --bg-gray-color: #f5f5f5;
@@ -221,9 +221,9 @@ select:focus {
 }
 
 .desc {
-    font-size: 0.875rem;
+    font-size: 14px;
     color: var(--text-gray-color);
-    font-weight: 500;
+    font-weight: 400;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -517,16 +517,20 @@ select:focus {
 **/
 
 .welcome-section {
-    margin-top: 26px;
+    margin-top: 16px;
 }
 
 .user-info {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 32px;
+    /* padding-bottom: 24px;
+    border: 1px solid var(--border-color); */
+    padding: 24px 24px;
+    box-shadow: var(--box-shadow);
+    border-radius: 12px;
+    background-color: #ffffff;
 }
 
 .avatar-wrapper {
@@ -566,8 +570,8 @@ select:focus {
 }
 
 .welcome-title {
-    font-size: 32px;
-    line-height: 42px;
+    font-size: 26px;
+    line-height: 32px;
     font-weight: 600;
     margin-bottom: 6px;
     color: var(--text-color);
@@ -578,8 +582,8 @@ select:focus {
 }
 
 .intro-text {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 22px;
     color: var(--text-gray-color);
 }
 
@@ -787,7 +791,7 @@ select:focus {
 .quick-start-card {
     border: none;
     background-color: #ffffff;
-    padding: 28px 24px;
+    padding: 28px 24px 32px;
     box-shadow: var(--box-shadow);
 }
 
@@ -796,7 +800,7 @@ select:focus {
     top: -8px;
     right: -8px;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -815,7 +819,7 @@ select:focus {
 .quick-start-card .card-next-icon {
     background-color: white;
     padding: 12px;
-    border-radius: 8px;
+    border-radius: 50%;
     box-shadow: var(--box-shadow);
     transition: all 0.3s linear;
 }
@@ -852,26 +856,28 @@ select:focus {
 .card-icon {
     padding: 0.75rem;
     background-color: var(--bg-color);
-    border-radius: 8px;
+    border-radius: 50%;
     margin-bottom: 1rem;
 }
 
 .card-icon svg,
 .card-icon img {
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
 }
 
 .card-title {
     font-weight: 600;
-    font-size: 1.125rem;
+    font-size: 20px;
+    line-height: 26px;
     margin-bottom: 8px;
 }
 
 .card-description {
-    font-size: 0.875rem;
+    font-size: 15px;
+    line-height: 23px;
     color: var(--text-gray-color);
-    font-weight: 500;
+    font-weight: 400;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -938,11 +944,12 @@ select:focus {
 
 .showcase-card .showcase-date {
     color: var(--text-gray-color);
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
     line-height: 18px;
     text-align: end;
     margin-left: auto;
+    margin-top: 8px;
 }
 
 .showcase-card .desc {
@@ -1005,10 +1012,11 @@ select:focus {
 }
 
 .media-card .tag {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     color: var(--text-color);
     font-size: 12px;
     line-height: 1;
+    font-weight: 600;
     padding: 4px 6px;
     border-radius: 4px;
     display: inline-flex;
@@ -1626,7 +1634,7 @@ select:focus {
     display: flex;
 }
 
-.result-section .content.active .editor-container  {
+.result-section .content.active .editor-container {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -1890,11 +1898,11 @@ select:focus {
     border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
 }
 
 .upgrade-section .upgrade-item .title {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 24px;
     font-weight: 600;
     color: var(--text-color);
@@ -1925,7 +1933,7 @@ select:focus {
     font-size: 14px;
     line-height: 22px;
     font-weight: 600;
-    color: var(--text-gray-color);
+    color: var(--text-color);
     margin-bottom: 12px;
     overflow: visible;
     min-height: 44px;
@@ -1943,8 +1951,8 @@ select:focus {
 }
 
 .upgrade-section .upgrade-item .price .number span {
-    font-size: 28px;
-    line-height: 34px;
+    font-size: 24px;
+    line-height: 30px;
     font-weight: 700;
     color: var(--primary-color);
 }
@@ -1970,12 +1978,12 @@ select:focus {
 .upgrade-section .upgrade-item .benefit-item {
     display: flex;
     align-items: self-start;
-    gap: 12px;
+    gap: 8px;
     margin-bottom: 12px;
     font-size: 14px;
     line-height: 20px;
     font-weight: 500;
-    color: var(--text-gray-color);
+    color: var(--text-color);
 }
 
 .upgrade-section .upgrade-item .benefits img,
@@ -1983,7 +1991,7 @@ select:focus {
     width: 16px;
     height: 16px;
     object-fit: contain;
-    margin-top: 2px;
+    margin-top: 1px;
 }
 
 .upgrade-section .upgrade-heading {
@@ -1999,4 +2007,168 @@ select:focus {
     margin-inline: auto;
     text-align: center;
     margin-top: 12px;
+}
+
+.upgrade-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px;
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 48px;
+    position: relative;
+    transition: all 0.3s linear;
+}
+
+.upgrade-banner:hover {
+    box-shadow: var(--box-shadow-hover);
+}
+
+.upgrade-banner .bg img {
+    width: 340px;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    bottom: 0;
+    right: 54px;
+}
+
+.upgrade-banner .content {
+    width: 55%;
+}
+
+.upgrade-banner .content .title {
+    font-size: 26px;
+    line-height: 34px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.upgrade-banner .content .title span {
+    font-size: 30px;
+    color: var(--primary-color);
+    font-weight: 700;
+    background: linear-gradient(91.05deg, #003f6b, #0d8ae9);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.upgrade-banner .content .description {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--text-gray-color);
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+
+
+/**
+* POPUP SEARCH
+**/
+
+.blur-black {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 98;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.blur-black.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.popup-search {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 100%;
+    max-width: 576px;
+    height: fit-content;
+    background-color: #ffffff;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.popup-search.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.popup-search input {
+    height: 50px;
+}
+
+.popup-search .result {
+    margin-top: 18px;
+}
+
+.popup-search .result svg,
+.popup-search .result img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    margin-top: 2px;
+    fill: var(--text-gray-color);
+}
+
+.popup-search .result .heading {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.popup-search .result .heading span {
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    color: var(--text-gray-color);
+    white-space: nowrap;
+}
+
+.popup-search .result .heading::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-color);
+    flex: 1 0 0;
+    margin-left: 12px;
+}
+
+.popup-search .result .result-link {
+    padding: 12px;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 400;
+    color: var(--text-color);
+    display: block;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.popup-search .result .result-link:hover {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
 }

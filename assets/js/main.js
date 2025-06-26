@@ -280,6 +280,11 @@ $(document).ready(function () {
         $('.blur').removeClass('active');
     });
 
+    $('.blur').on('click', function () {
+        $('.popup-share').removeClass('active');
+        $('.blur').removeClass('active');
+    });
+
     typeEffect($('.welcome-title'), 40);
     typeEffect($('.intro-text'), 20);
     typeEffect($('.result-section .responseMessage .desc'), 30);
@@ -363,5 +368,28 @@ $(document).ready(function () {
         $('.content').each(function () {
             $(this).addClass('active')
         });
+    })
+
+    $('.btn-toggle-search').on('click', function (event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        $('.popup-search').addClass('active');
+        $('.blur-black').addClass('active');
+    })
+
+    $('.blur-black').on("click", function () {
+        $('.popup-search').removeClass('active');
+        $('.blur-black').removeClass('active');
+    });
+
+
+    $('.sidebar-upgrade .close').on('click', function (event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        $('.sidebar-upgrade').addClass('hide');
     })
 });

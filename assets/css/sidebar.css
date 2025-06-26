@@ -112,7 +112,7 @@ body {
     border-radius: .5em;
     padding: 10px 16px;
     text-decoration: none;
-    color: var(--text-clr);
+    color: var(--text-color);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -157,7 +157,7 @@ body {
 
 #sidebar svg {
     flex-shrink: 0;
-    fill: var(--text-clr);
+    fill: var(--text-color);
 }
 
 #sidebar a span,
@@ -188,11 +188,11 @@ body {
     transition: 200ms ease;
 }
 
-.rotate svg {
+#toggle-btn svg {
     transition: all 0.3s linear;
 }
 
-.rotate svg:last-child {
+#sidebar.close #toggle-btn svg:last-child {
     transform: scaleX(-1);
 }
 
@@ -202,16 +202,28 @@ body {
 
 #toggle-btn {
     margin-left: auto;
-    padding: 1em;
+    padding: 8px;
     border: none;
     border-radius: .5em;
     background: none;
     cursor: pointer;
+    position: absolute;
+    top: 6px;
+    right: -0px;
+    transition: all 0.3s linear;
+}
+
+#sidebar.close #toggle-btn {
+    top: 6px;
+    right: -52px;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    padding: 8px;
 }
 
 #toggle-btn svg {
     transition: rotate 150ms ease;
-    width: 24px;
+    width: 20px;
     height: auto;
     fill: var(--primary-color);
 }
@@ -222,12 +234,12 @@ body {
 
 .profile-header {
     padding: 8px 16px;
-    padding-bottom: 12px;
+    /* padding-bottom: 12px; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid var(--border-color);
-    margin-bottom: 8px;
+    /* margin-bottom: 8px; */
     cursor: default;
     position: relative;
     cursor: pointer;
@@ -336,6 +348,77 @@ body {
     fill: currentColor;
 }
 
+.sidebar-upgrade {
+    position: absolute;
+    bottom: 72px;
+    left: 12px;
+    width: 90%;
+    background-color: var(--bg-color);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    padding-top: 70px;
+    box-shadow: var(--box-shadow);
+    transition: all 0.2s linear;
+}
+
+.sidebar-upgrade.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.sidebar-upgrade .bg {
+    display: flex;
+    justify-self: center;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sidebar-upgrade .bg img {
+    width: 120px;
+    height: auto;
+}
+
+.sidebar-upgrade .close svg,
+.sidebar-upgrade .close img {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+    width: 16px;
+    height: auto;
+}
+
+.sidebar-upgrade .btn-base {
+    color: #ffffff !important;
+}
+
+.sidebar-upgrade .btn-base svg {
+    fill: #ffffff !important;
+}
+
+.sidebar-upgrade .title {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 6px;
+    margin-top: 12px;
+}
+
+.sidebar-upgrade .description {
+    white-space: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 12px;
+    color: var(--text-gray-color);
+}
 
 @media(max-width: 800px) {
 

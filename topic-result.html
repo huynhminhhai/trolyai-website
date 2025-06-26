@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startup AI</title>
-    <link rel="icon" type="image/png" href="./assets/images/favico.webp">
+    <link rel="icon" type="image/png" href="./assets/images/favicon.svg">
 
     <!-- library -->
     <link rel="stylesheet" href="./assets/library/bootstrap/bootstrap.min.css" />
@@ -30,11 +30,11 @@
                 <a class="logo" href="./index.html">
                     <img src="./assets/images/logo.png" alt="logo">
                 </a>
-                <button onclick=toggleSidebar() id="toggle-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                        fill="#e8eaed">
+                <button id="toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
                         <path
-                            d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z" />
+                            d="M224,128a8,8,0,0,1-8,8H112a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM112,72H216a8,8,0,0,0,0-16H112a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM72,144a8,8,0,0,0,5.66-13.66L43.31,96,77.66,61.66A8,8,0,0,0,66.34,50.34l-40,40a8,8,0,0,0,0,11.32l40,40A8,8,0,0,0,72,144Z">
+                        </path>
                     </svg>
                 </button>
             </li>
@@ -257,7 +257,7 @@
                         </button>
                         <div class="dropdown-menu" id="dropdownMenu">
 
-                            <div class="menu-item">
+                            <div class="menu-item enabled-edit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
                                     viewBox="0 0 256 256">
                                     <path
@@ -290,116 +290,9 @@
                     </div>
                 </div>
                 <div class="content">
-                    <!-- <h1>Giáo án Toán lớp 5: Phân số và Số thập phân</h1> -->
-                    <h2>I. Mục tiêu</h2>
-                    <ul>
-                        <li>Học sinh nắm vững khái niệm <strong>phân số</strong> và <strong>số thập phân</strong>.
-                        </li>
-                        <li>Hiểu và thực hiện được <strong>chuyển đổi</strong> giữa phân số và số thập phân.</li>
-                        <li>Rèn kỹ năng đọc, viết, so sánh và thực hiện các phép tính với phân số và số thập phân.
-                        </li>
-                        <li>Phát triển tư duy logic và kỹ năng giải quyết vấn đề thực tế liên quan đến phân số và số
-                            thập phân.</li>
-                    </ul>
-                    <h2>II. Chuẩn bị</h2>
-                    <ul>
-                        <li><strong>Giáo viên:</strong> Bảng phụ, phiếu bài tập, máy chiếu (nếu có), SGK Toán lớp 5,
-                            hình ảnh minh họa phân số và số thập phân (hình bánh pizza, thước kẻ chia vạch).</li>
-                        <li><strong>Học sinh:</strong> Vở ghi, SGK Toán lớp 5, bảng con, bút chì, thước kẻ.</li>
-                    </ul>
-                    <h2>III. Các hoạt động dạy học (45 phút)</h2>
-                    <h3>1. Khởi động (5 phút)</h3>
-                    <ul>
-                        <li>Hoạt động: Giáo viên (GV) chiếu hình ảnh một chiếc bánh pizza được chia làm 4 phần, hỏi:
-                            “Nếu ăn 2 phần, em đã ăn bao nhiêu phần của cái bánh?” (Dẫn dắt đến khái niệm 2/4).</li>
-                        <li>Mục tiêu: Kích thích hứng thú và ôn lại khái niệm phân số.</li>
-                    </ul>
-                    <h3>2. Bài mới (30 phút)</h3>
-                    <h4>a. Giới thiệu phân số (10 phút)</h4>
-                    <ul>
-                        <li>GV giải thích: Phân số có dạng a/b (b ≠ 0), trong đó a là tử số, b là mẫu số.</li>
-                        <li>Ví dụ: 1/2 (một nửa), 3/4 (ba phần tư). GV dùng bảng phụ vẽ hình minh họa (hình tròn
-                            chia phần).</li>
-                        <li>Hoạt động: HS thảo luận nhóm đôi, tìm ví dụ thực tế về phân số (ví dụ: chia quả cam,
-                            chia thời gian).</li>
-                    </ul>
-                    <h4>b. Giới thiệu số thập phân (10 phút)</h4>
-                    <ul>
-                        <li>GV giới thiệu: Số thập phân có phần nguyên và phần thập phân, cách nhau bởi dấu phẩy (ví
-                            dụ: 0,5; 0,75).</li>
-                        <li>GV dùng thước kẻ chia vạch để minh họa: 0,5 là 5/10, 0,75 là 75/100.</li>
-                        <li>Hoạt động: HS viết 3 số thập phân bất kỳ lên bảng con, GV kiểm tra.</li>
-                    </ul>
-                    <h4>c. Chuyển đổi giữa phân số và số thập phân (10 phút)</h4>
-                    <ul>
-                        <li>GV hướng dẫn:
-                            <ul>
-                                <li>Chuyển phân số thành số thập phân: Chia tử số cho mẫu số (ví dụ: 1/2 = 1 ÷ 2 =
-                                    0,5).</li>
-                                <li>Chuyển số thập phân thành phân số: Viết số thập phân dưới dạng phân số với mẫu
-                                    là 10, 100… rồi rút gọn (ví dụ: 0,75 = 75/100 = 3/4).</li>
-                            </ul>
-                        </li>
-                        <li>Hoạt động: HS làm bài tập nhanh trên bảng con: Chuyển 3/5 thành số thập phân và 0,4
-                            thành phân số.</li>
-                    </ul>
-                    <h3>3. Luyện tập (8 phút)</h3>
-                    <ul>
-                        <li><strong>Bài 1:</strong> Viết các phân số sau dưới dạng số thập phân:
-                            <ul>
-                                <li>1/2 = 0,5</li>
-                                <li>3/4 = 0,75</li>
-                                <li>4/5 = 0,8</li>
-                                <li>7/10 = 0,7</li>
-                            </ul>
-                        </li>
-                        <li><strong>Bài 2:</strong> Viết các số thập phân sau dưới dạng phân số:
-                            <ul>
-                                <li>0,25 = 1/4</li>
-                                <li>0,5 = 1/2</li>
-                                <li>0,75 = 3/4</li>
-                                <li>1,2 = 6/5</li>
-                            </ul>
-                        </li>
-                        <li><strong>Bài 3:</strong> So sánh các cặp số sau:
-                            <ul>
-                                <li>0,75 và 3/4 (bằng nhau)</li>
-                                <li>0,6 và 2/3 (0,6 < 0,666...)</li>
-                                <li>4/5 và 0,8 (bằng nhau)</li>
-                            </ul>
-                        </li>
-                        <li>Hoạt động: HS làm bài trên phiếu học tập, GV thu 5-7 phiếu để chấm và nhận xét.</li>
-                    </ul>
-                    <h3>4. Củng cố – Dặn dò (2 phút)</h3>
-                    <ul>
-                        <li>GV hỏi nhanh: “Làm thế nào để chuyển 1/4 thành số thập phân?” và “0,8 là phân số nào?”.
-                        </li>
-                        <li>Dặn dò: Ôn lại cách chuyển đổi giữa phân số và số thập phân, chuẩn bị bài <em>So sánh
-                                hai số thập phân</em>.</li>
-                    </ul>
-                    <h2>IV. Bài tập về nhà</h2>
-                    <ul>
-                        <li><strong>Bài 1:</strong> Chuyển các phân số sau thành số thập phân:
-                            <ul>
-                                <li>1/4 = 0,25</li>
-                                <li>2/5 = 0,4</li>
-                                <li>3/10 = 0,3</li>
-                                <li>7/8 = 0,875</li>
-                            </ul>
-                        </li>
-                        <li><strong>Bài 2:</strong> Chuyển các số thập phân sau thành phân số:
-                            <ul>
-                                <li>0,2 = 1/5</li>
-                                <li>0,6 = 3/5</li>
-                                <li>1,5 = 3/2</li>
-                                <li>2,75 = 11/4</li>
-                            </ul>
-                        </li>
-                        <li><strong>Bài 3:</strong> Một bể chứa 50 lít nước. Người ta lấy ra 3/10 bể. Hỏi còn lại
-                            bao nhiêu lít nước? Viết kết quả dưới dạng số thập phân.<br>
-                            → Đáp án: Lấy ra: 50 × 3/10 = 15 lít; Còn lại: 50 − 15 = 35,0 lít.
-                        </li>
-                    </ul>
+                    <div class="content-text">
+                        <h2>I. Mục tiêu</h2><ul><li>Học sinh nắm vững khái niệm <strong>phân số</strong> và <strong>số thập phân</strong>.</li><li>Hiểu và thực hiện được <strong>chuyển đổi</strong> giữa phân số và số thập phân.</li><li>Rèn kỹ năng đọc, viết, so sánh và thực hiện các phép tính với phân số và số thập phân.</li><li>Phát triển tư duy logic và kỹ năng giải quyết vấn đề thực tế liên quan đến phân số và số thập phân.</li></ul><h2>II. Chuẩn bị</h2><ul><li><strong>Giáo viên:</strong> Bảng phụ, phiếu bài tập, máy chiếu (nếu có), SGK Toán lớp 5, hình ảnh minh họa phân số và số thập phân (hình bánh pizza, thước kẻ chia vạch).</li><li><strong>Học sinh:</strong> Vở ghi, SGK Toán lớp 5, bảng con, bút chì, thước kẻ.</li></ul><h2>III. Các hoạt động dạy học (45 phút)</h2><h3>1. Khởi động (5 phút)</h3><ul><li>Hoạt động: Giáo viên (GV) chiếu hình ảnh một chiếc bánh pizza được chia làm 4 phần, hỏi: “Nếu ăn 2 phần, em đã ăn bao nhiêu phần của cái bánh?” (Dẫn dắt đến khái niệm 2/4).</li><li>Mục tiêu: Kích thích hứng thú và ôn lại khái niệm phân số.</li></ul><h3>2. Bài mới (30 phút)</h3><h4>a. Giới thiệu phân số (10 phút)</h4><ul><li>GV giải thích: Phân số có dạng a/b (b ≠ 0), trong đó a là tử số, b là mẫu số.</li><li>Ví dụ: 1/2 (một nửa), 3/4 (ba phần tư). GV dùng bảng phụ vẽ hình minh họa (hình tròn chia phần).</li><li>Hoạt động: HS thảo luận nhóm đôi, tìm ví dụ thực tế về phân số (ví dụ: chia quả cam, chia thời gian).</li></ul><h4>b. Giới thiệu số thập phân (10 phút)</h4><ul><li>GV giới thiệu: Số thập phân có phần nguyên và phần thập phân, cách nhau bởi dấu phẩy (ví dụ: 0,5; 0,75).</li><li>GV dùng thước kẻ chia vạch để minh họa: 0,5 là 5/10, 0,75 là 75/100.</li><li>Hoạt động: HS viết 3 số thập phân bất kỳ lên bảng con, GV kiểm tra.</li></ul><h4>c. Chuyển đổi giữa phân số và số thập phân (10 phút)</h4><ul><li>GV hướng dẫn:<ul><li>Chuyển phân số thành số thập phân: Chia tử số cho mẫu số (ví dụ: 1/2 = 1 ÷ 2 = 0,5).</li><li>Chuyển số thập phân thành phân số: Viết số thập phân dưới dạng phân số với mẫu là 10, 100… rồi rút gọn (ví dụ: 0,75 = 75/100 = 3/4).</li></ul></li><li>Hoạt động: HS làm bài tập nhanh trên bảng con: Chuyển 3/5 thành số thập phân và 0,4 thành phân số.</li></ul><h3>3. Luyện tập (8 phút)</h3><ul><li><strong>Bài 1:</strong> Viết các phân số sau dưới dạng số thập phân:<ul><li>1/2 = 0,5</li><li>3/4 = 0,75</li><li>4/5 = 0,8</li><li>7/10 = 0,7</li></ul></li><li><strong>Bài 2:</strong> Viết các số thập phân sau dưới dạng phân số:<ul><li>0,25 = 1/4</li><li>0,5 = 1/2</li><li>0,75 = 3/4</li><li>1,2 = 6/5</li></ul></li><li><strong>Bài 3:</strong> So sánh các cặp số sau:<ul><li>0,75 và 3/4 (bằng nhau)</li><li>0,6 và 2/3 (0,6 < 0,666...)</li><li>4/5 và 0,8 (bằng nhau)</li></ul></li><li>Hoạt động: HS làm bài trên phiếu học tập, GV thu 5-7 phiếu để chấm và nhận xét.</li></ul><h3>4. Củng cố – Dặn dò (2 phút)</h3><ul><li>GV hỏi nhanh: “Làm thế nào để chuyển 1/4 thành số thập phân?” và “0,8 là phân số nào?”.</li><li>Dặn dò: Ôn lại cách chuyển đổi giữa phân số và số thập phân, chuẩn bị bài <em>So sánh hai số thập phân</em>.</li></ul><h2>IV. Bài tập về nhà</h2><ul><li><strong>Bài 1:</strong> Chuyển các phân số sau thành số thập phân:<ul><li>1/4 = 0,25</li><li>2/5 = 0,4</li><li>3/10 = 0,3</li><li>7/8 = 0,875</li></ul></li><li><strong>Bài 2:</strong> Chuyển các số thập phân sau thành phân số:<ul><li>0,2 = 1/5</li><li>0,6 = 3/5</li><li>1,5 = 3/2</li><li>2,75 = 11/4</li></ul></li><li><strong>Bài 3:</strong> Một bể chứa 50 lít nước. Người ta lấy ra 3/10 bể. Hỏi còn lại bao nhiêu lít nước? Viết kết quả dưới dạng số thập phân.<br>→ Đáp án: Lấy ra: 50 × 3/10 = 15 lít; Còn lại: 50 − 15 = 35,0 lít.</li></ul>
+                    </div>
                 </div>
             </div>
         </section>
